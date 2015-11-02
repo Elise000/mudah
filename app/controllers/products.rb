@@ -25,7 +25,7 @@ end
 get "/users/:user_id/products/:id" do
 	@user = User.find(params['user_id'])
 	@product = Product.find(params[:id])
-	erb :"products/product_show"
+	redirect "/users/#{@user.id}/products/#{@product.id}/favourites"
 end
 
 get "/products/:id/edit" do

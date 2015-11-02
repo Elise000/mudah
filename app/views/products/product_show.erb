@@ -19,8 +19,10 @@
 			<% end %>					
 		</div>
 	
-	<h4> Also Favourite by: </h4>
-	
+	<h4> Favourite by: </h4>
+	<% @favourites.each do |x| %>
+	<a href= "/users/<%=x.user.id%>/products"><%= x.user.name %>
+	<% end %>
 
 </div>
 

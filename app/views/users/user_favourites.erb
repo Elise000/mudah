@@ -3,8 +3,18 @@
 <h1>My Favourite Products</h1>
 
 <% @favourites.each do |f| %>
-	<%= f.product.description %>
-	<br>
+	<div class="row">
+		<div class = "col-md-6">
+			<ul class="list-inline">
+				<li><a href= "/users/<%=f.user.id%>/products/<%=f.product.id%>"><%= f.product.description %></a></li>
+					<li>Posted By: <a href= "/users/<%=f.user.id%>/products"><%= f.user.name %></a></li>
+						<form method="post" action="/favourites/<%=f.id%>">
+							<input type="hidden", name="_method", value="delete">
+							<input type="submit" value="Delete">
+						</form>
+			</ul>
+		</div>	
+	</div>	
 <% end %>
 
 </div>
