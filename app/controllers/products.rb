@@ -30,7 +30,8 @@ end
 
 get "/products/:id/edit" do
 	@user = current_user
-	@product = Product.find(params[:id])
+	@product = current_user.products.find(params[:id])
+	# @product = Product.find(params[:id])
 	erb :"products/products_edit"
 end
 
@@ -44,8 +45,8 @@ put "/products/:id/edit" do
 end
 
 delete "/products/:id" do
-	@user = current_user
+	# @user = current_user
 	@product = Product.find(params[:id])
 	@product.destroy
-	redirect "/users/#{@user.id}/products"
+	redirect "/users/#{current_user.id}/products"
 end

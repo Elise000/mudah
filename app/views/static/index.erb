@@ -2,10 +2,13 @@
 
 <div class="container">
 <!-- 	<img id = "logo01" src="img/duck_duck_ask_logo1" width="500" height="300"> -->
+		<% if params[:msg] %>
+			<h3><%= params[:msg] %></h3>
+		<% end %>
 
-			<% if @error_msg %>
-				<h2><%= @error_msg %> </h2>
-			<% end %>
+		<% if @error_msg %>
+			<h2><%= @error_msg %> </h2>
+		<% end %>
 
 		<div id="signup">
 			<form method="post" action="/signup">

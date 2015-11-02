@@ -5,7 +5,9 @@ post '/signup' do
   @user = User.new(params[:user])
 
   if @user.save
-    redirect '/'
+    @message = "Successful Sign Up. Procees to Sign In below"
+    redirect "/?msg=#{@message}"
+    # redirect "/?msg=" + @message
   else
     @error_msg = "Bummer, Sign up failed"
     erb :"static/index"
