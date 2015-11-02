@@ -1,5 +1,5 @@
-class Product < ActiveRecord::Base
+class Favourite < ActiveRecord::Base
+	belongs_to :product
 	belongs_to :user
-	has_many :favourites
 	# This is Sinatra! Remember to create a migration!
 end

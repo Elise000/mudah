@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
 	has_many :products
+  has_many :favourites
 	# This is Sinatra! Remember to create a migration!
 	validates :name, presence: true
   validates :email, presence: true, uniqueness: true
