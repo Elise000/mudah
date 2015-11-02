@@ -21,8 +21,9 @@ get "/users/:user_id/products" do
   	erb :"products/products_index"
 end
 
-get "/products/:id" do
-	@user = current_user
+
+get "/users/:user_id/products/:id" do
+	@user = User.find(params['user_id'])
 	@product = Product.find(params[:id])
 	erb :"products/product_show"
 end

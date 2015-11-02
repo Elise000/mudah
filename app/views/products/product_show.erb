@@ -10,8 +10,17 @@
 		</div>	
 	</div>	
 
-	<button>Add To My Favourite</button>
-	<h4> Favourite by: </h4>
+
+		<div>
+			<% if @user != current_user %>
+    	<form id="add favourite" action="/products/<%=@product.id%>/add_favourite", method="post">
+    		<input type="submit" value="Add To Favourite">
+			</form>		
+			<% end %>					
+		</div>
+	
+	<h4> Also Favourite by: </h4>
+	
 
 </div>
 

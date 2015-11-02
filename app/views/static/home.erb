@@ -15,7 +15,7 @@
 		<div class="row">
 			<div class = "col-md-6">
 				<ul class="list-inline">
-						<li><p>Item: <a href= "/products/<%=p.id%>"><%=p.description%></a></p></li>
+						<li><p>Item: <a href= "/users/<%=p.user.id%>/products/<%=p.id%>"><%=p.description%></a></p></li>
 								<li><p>RM: <%=p.price%></p></li>
 									<li><p>Posted by: <a href= "/users/<%=p.user.id%>/products"><%=p.user.name%></a></p>
 									</li>
