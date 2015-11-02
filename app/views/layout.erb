@@ -18,6 +18,13 @@
   <title>EASY v.1.0</title>
 </head>
 <body>
+<% if logged_in? %>
+    <nav class="navbar navbar-inverse">
+      <a href="/home"><button>Home</button></a>
+      <a href="/users/<%=@user.id %>"><button>Profile</button></a>
+      <a href="/logout"><button>Logout</button></a>
+    </nav>
+  <%end%>
   <%= yield %>
 </body>
 <footer>

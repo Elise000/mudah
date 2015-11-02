@@ -17,8 +17,7 @@ post '/login' do
 
   if @user
     session[:user_id] = @user.id
-    # redirect "/products"
-    erb :"products/products_index"
+    redirect "/home"
   else
     @error_msg = "Invalid User"
     erb :"static/index"
@@ -27,7 +26,7 @@ end
 
 get '/users/:id' do
   @user=User.find(params[:id])
-  # @products = @user.products.all
+  @products = @user.products.all
   # @favourites = @user.favourites.all
   erb :"users/show"
 end

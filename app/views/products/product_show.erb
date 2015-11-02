@@ -1,0 +1,14 @@
+<div class="container">
+
+	<div class="row">
+		<div class = "col-md-6">
+			<ul class="list-inline">
+				<li><h1>Item: <%= @product.description%></h1></li>
+					<li>Price: <%= @product.price %></li>
+						<li><p>Posted by: <a href= "/users/<%=@product.id%>/products"><%=@product.user.name%></a></p></li>
+			</ul>
+		</div>	
+	</div>	
+
+</div>
+

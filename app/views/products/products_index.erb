@@ -1,1 +1,23 @@
-<p> Sucessful login </p>
+<div class="container">
+
+<h1><%=@user.name%>'s Product Listings</h1>
+
+	<% @products.each do |p| %>
+		<div class="row">
+			<div class = "col-md-6">
+				<ul class="list-inline">
+					<li><a href= "/products/<%=p.id%>"><%= p.description %></a></li>
+							<li><p><%= p.price %></p></li>
+								<% if @user == current_user%>
+									<li><a href="/products/<%=p.id%>/edit"><button>Edit</button></a></li>
+										<li>
+											<form method="post" action="/products/<%=p.id%>">
+											<input type="hidden", name="_method", value="delete">
+											<input type="submit" value="Delete">
+											</form>
+										</li>
+								<% end %>
+				</ul>
+			</div>
+		</div>		
+	<%end%>

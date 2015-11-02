@@ -1,0 +1,9 @@
+<div class="container">
+<h1>Edit Your Product Listing Here</h1>
+
+<form method="post" action="/products/<%=@product.id%>/edit">
+	<input type="hidden", name="_method", value="put">
+	<input name="product[description]" value="<%=@product.description%>">
+	<input name="product[price]" value="<%=@product.price%>">
+	<input type="submit" value="Edit">
+</form>
