@@ -1,0 +1,32 @@
+<h1>WELCOME TO EASY</h1>
+
+<div class="container">
+<!-- 	<img id = "logo01" src="img/duck_duck_ask_logo1" width="500" height="300"> -->
+
+			<% if @error_msg %>
+				<h2><%= @error_msg %> </h2>
+			<% end %>
+
+		<div id="signup">
+			<form method="post" action="/signup">
+				<h3>Please Sign Up</h3>
+			  <input type="text" placeholder="Name" name="user[name]"></br>
+			  <input type="text" placeholder="Email" name="user[email]"></br>
+			  <input type="password" placeholder="Password" name="user[password]"></br>
+			  <input type="submit" value="Sign up">
+			</form>
+
+		</div>
+
+		<div id='signin'>
+			<form method="post" action="/login">
+				<h3>Please Log In</h3>
+			  <input type="text" placeholder="Email" name="user[email]"></br>
+			  <input type="password" placeholder="Password" name="user[password]"></br>
+			  <input type="submit" value="Login">
+			</form>
+		</div>
+	</div>
+</div>
+
+
