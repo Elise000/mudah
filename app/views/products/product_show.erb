@@ -21,7 +21,13 @@
 	
 	<h4> Favourite by: </h4>
 	<% @favourites.each do |x| %>
-	<a href= "/users/<%=x.user.id%>/products"><%= x.user.name %>
+		<div class="row">
+			<div class = "col-md-6">
+				<ul class= "list-inline">
+					<li><a href= "/users/<%=x.user.id%>/products"><%= x.user.name %></a></li>
+				</ul>
+			</div>
+		</div>		
 	<% end %>
 
 </div>

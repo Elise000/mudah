@@ -27,9 +27,9 @@ post '/login' do
 end
 
 get '/users/:id' do
-  @user=User.find(params[:id])
-  @products = @user.products.all
-  # @favourites = @user.favourites.all
+  @user = current_user
+  # @products = @user.products
+  # # @favourites = @user.favourites.all
   erb :"users/show"
 end
 
